@@ -92,7 +92,7 @@ app.controller(
 		function getTweetText() {
 
 			// TODO: Fix this link once blog post is written.
-			var text = ( "Woot! I just scored " + $scope.score + " points on #RegExDay 2014! Play for a chance to win! http://bjam.in/9999" );
+			var text = ( "Rock on with my bad self! I just scored " + $scope.score + " points on #RegExDay 2014! Play for a chance to win! http://bjam.in/9999" );
 
 			return( encodeURIComponent( text ) );
 
