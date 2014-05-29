@@ -199,7 +199,7 @@ app.factory(
 				// Only update the internal round and list IF at least one pattern was used.
 				if ( removedPatterns.length ) {
 
-					rount = nextRound;
+					round = nextRound;
 
 					// Now that the board has changed, we need to rebuild the list.
 					parts = buildList();
