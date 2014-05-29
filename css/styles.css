@@ -187,6 +187,10 @@ div.outro div.tweet {
 div.outro div.tweet a {
   color: inherit ;
 }
+div.outro div.tweet a:hover {
+  color: #000000 ;
+  font-weight: 600 ;
+}
 div.used-words {
   color: #CCCCCC ;
   font-size: 32px ;

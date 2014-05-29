@@ -169,7 +169,10 @@ app.factory(
 			// I remove the selected items and return the patterns that were removed.
 			function applySelection() {
 
-				round++;
+				// Each new part will be marked with a new round indicator; however, we don't want
+				// to change the actual round value until we know that we've removed at least one
+				// pattern. This way, the rounds don't change on empty selections.
+				var nextRound = ( round + 1 );
 
 				var removedPatterns = [];
 
@@ -186,15 +189,22 @@ app.factory(
 							y: part.y,
 							value: patternService.nextPattern(),
 							isSelected: false,
-							round: round
+							round: nextRound
 						};
 
 					}
 
 				}
 
-				// Now that the board has changed, we need to rebuild the list.
-				parts = buildList();
+				// Only update the internal round and list IF at least one pattern was used.
+				if ( removedPatterns.length ) {
+
+					rount = nextRound;
+
+					// Now that the board has changed, we need to rebuild the list.
+					parts = buildList();
+
+				}
 
 				return( removedPatterns );
 
