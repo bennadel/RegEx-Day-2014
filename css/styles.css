@@ -105,6 +105,10 @@ div.board li.part.round-10 {
   background-color: #fa1414;
   color: #FFFFFF ;
 }
+div.board li.part.round-11 {
+  background-color: #fa0000;
+  color: #FFFFFF ;
+}
 div.board li.part.selected {
   background-color: #FFE8FB ;
   border-color: #FF33CC ;
@@ -113,7 +117,8 @@ div.board li.part.selected.round-6,
 div.board li.part.selected.round-7,
 div.board li.part.selected.round-8,
 div.board li.part.selected.round-9,
-div.board li.part.selected.round-10 {
+div.board li.part.selected.round-10,
+div.board li.part.selected.round-11 {
   color: #000000 ;
 }
 div.board li.part.ng-enter {
