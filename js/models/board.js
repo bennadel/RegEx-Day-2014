@@ -4,7 +4,7 @@ app.factory(
 	"Board",
 	function( patternService ) {
 
-		function Board( rows, columns ) {
+		function Board( columns, rows ) {
 
 			var round = 1;
 

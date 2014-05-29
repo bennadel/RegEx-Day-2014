@@ -144,7 +144,7 @@ app.controller(
 
 			} else {
 
-			 	return( patternService.scorePatterns( patterns ) + Math.pow( word.length, 2 ) );
+			 	return( patternService.scorePatterns( patterns ) + ( word.length * 2 ) );
 				
 			}
 

@@ -119,9 +119,9 @@ div.board li.part.selected.round-10 {
 div.board li.part.ng-enter {
   opacity: 0;
   filter: alpha(opacity=0);
-  -webkit-transition: opacity 2s ease;
-  -o-transition: opacity 2s ease;
-  transition: opacity 2s ease;
+  -webkit-transition: opacity 1.5s ease;
+  -o-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
 }
 div.board li.part.ng-enter.ng-enter-active {
   opacity: 1;
@@ -192,6 +192,7 @@ div.used-words {
   font-size: 32px ;
   font-weight: 300 ;
   line-height: 42px ;
+  min-height: 42px ;
   padding-top: 30px ;
 }
 div.used-words span {
@@ -205,4 +206,34 @@ div.used-words span a {
 div.used-words span a:hover {
   color: #FF33CC ;
   text-decoration: underline ;
+}
+div.about {
+  margin: 50px 0px 0px 0px ;
+}
+div.about a.avatar {
+  background-color: #FAFAFA ;
+  border: 1px solid #CCCCCC ;
+  border-radius: 65px 65px 65px 65px ;
+  display: block ;
+  height: 65px ;
+  margin: 0px auto 0px auto ;
+  padding: 5px 5px 5px 5px ;
+  width: 65px ;
+}
+div.about a.avatar img {
+  border-width: 0px 0px 0px 0px ;
+  border-radius: 65px 65px 65px 65px ;
+  display: block ;
+}
+div.about a.avatar:hover {
+  background-color: #FFE8FB ;
+  border-color: #FF33CC ;
+}
+div.about p {
+  color: #999999 ;
+  font-size: 16px ;
+  line-height: 25px ;
+}
+div.about p a {
+  color: inherit ;
 }

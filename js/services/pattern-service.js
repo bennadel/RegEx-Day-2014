@@ -14,7 +14,7 @@ app.service(
 		// I keep track of how much each pattern is worth. 
 		var points = {};
 
-		// Scrabble distribution for single letters.
+		// Scrabble distribution and points for single letters.
 		definePattern( "a", 1, 9 );
 		definePattern( "b", 3, 2 );
 		definePattern( "c", 3, 2 );
@@ -43,35 +43,36 @@ app.service(
 
 		// Pattern distributions.
 		definePattern( ".", 1, 10 );
-		definePattern( "[a-z]", 1, 2 );
-		definePattern( "[aeiou]", 1, 15 );
-		definePattern( "[^aeio]", 1, 10 );
-		definePattern( "[a-m]", 1, 10 );
-		definePattern( "[n-z]", 1, 10 );
+		definePattern( "[a-z]", 1, 5 );
+		definePattern( "[aeiou]", 2, 15 );
+		definePattern( "[^aeio]", 2, 15 );
+		definePattern( "[a-m]", 3, 10 );
+		definePattern( "[n-z]", 3, 10 );
 		definePattern( "ing", 10, 5 );
 		definePattern( "ion", 10, 3 );
-		definePattern( "o+", 1, 2 );
-		definePattern( "e+", 1, 2 );
+		definePattern( "o+", 5, 2 );
+		definePattern( "e+", 5, 2 );
 		definePattern( "t+", 8, 2 );
 		definePattern( "^s", 5, 5 );
 		definePattern( "s$", 5, 5 );
 		definePattern( "^t", 5, 5 );
+		definePattern( "^a", 5, 5 );
 		definePattern( "\\1", 30, 5 );
 		definePattern( "\\2", 40, 5 );
 		definePattern( "\\3", 50, 5 );
 
 		// Two letter cominbations.
-		definePattern( "qu?", 1, 2 );
-		definePattern( "he", 1, 2 );
-		definePattern( "re", 1, 2 );
-		definePattern( "an", 1, 2 );
-		definePattern( "(s|t)h", 1, 3 );
-		definePattern( "e(r|s)", 1, 3 );
-		definePattern( "in", 1, 2 );
-		definePattern( "ly?", 1, 2 );
-		definePattern( "t[eh]", 1, 2 );
-		definePattern( "[ai]n", 1, 2 );
-		definePattern( "[oea]r", 1, 2 );
+		definePattern( "qu?", 10, 3 );
+		definePattern( "he", 5, 3 );
+		definePattern( "re", 5, 3 );
+		definePattern( "an", 5, 3 );
+		definePattern( "(s|t)h", 5, 3 );
+		definePattern( "e(r|s)", 5, 5 );
+		definePattern( "in", 5, 2 );
+		definePattern( "ly?", 5, 2 );
+		definePattern( "t[eh]", 5, 2 );
+		definePattern( "[ai]n", 5, 2 );
+		definePattern( "[oea]r", 5, 2 );
 
 		// Return public API.
 		return({
@@ -89,7 +90,7 @@ app.service(
 		// I prepare the given pattern for scoring and distribution.
 		function definePattern( pattern, value, distribution ) {
 
-			points[ pattern ] = value;
+			points[ "pattern_" + pattern ] = value;
 
 			patterns = patterns.concat( times( pattern, distribution ) );
 
@@ -113,7 +114,7 @@ app.service(
 		// I return the point score for the given pattern.
 		function scorePattern( pattern ) {
 
-			return( points[ pattern ] );
+			return( points[ "pattern_" + pattern ] );
 
 		}
 

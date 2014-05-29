@@ -79,7 +79,7 @@
 		<!-- END: Outro. -->
 
 		<!-- BEGIN: Used Words. -->
-		<div ng-show="usedWords.length" class="used-words">
+		<div class="used-words">
 
 			<span ng-repeat="word in usedWords">
 				<a ng-href="http://dictionary.reference.com/browse/{{ word }}?s=t" target="reference">{{ word }}</a><span ng-hide="$last">,</span>
@@ -87,6 +87,23 @@
 
 		</div>
 		<!-- END: Used Words. -->
+
+		<!-- BEGIN: About. -->
+		<div class="about">
+
+			<a href="http://www.bennadel.com" title="Ben Nadel's blog on all things web development." class="avatar">
+				<img src="http://www.gravatar.com/avatar/f9bbc701ca6770ef482cc1e172344e25?s=65" alt="Ben Nadel" />
+			</a>
+
+			<p>
+				Regular Expression Day was dreamt up and implemented by 
+				<a href="http://www.bennadel.com" title="Ben Nadel's blog on all things web development.">Ben Nadel</a>, 
+				who has had a long and passionate relationship with Regular Expressions. After he discovered their power,
+				he has done everything he can to help share the love with those that he meets.
+			</p>
+
+		</div>
+		<!-- END: About. -->
 
 	</div>
 	<!-- END: App. -->

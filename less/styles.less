@@ -44,12 +44,12 @@ body {
 	color: #333333 ;
 	.font-family-content ;
 	margin-bottom: 100px ;
-}
+} // END: body.
 
 div.app {
 	margin: 0px auto 0px auto ;
 	width: 700px ;
-}
+} // END: div.app.
 
 div.header {
 	.font-family-title ;
@@ -84,7 +84,7 @@ div.header {
 		display: inline-block ;
 		padding: 0px 10px 0px 10px ;
 	}
-}
+} // END: div.header.
 
 div.board {
 	border: 2px solid #CCCCCC ;
@@ -146,7 +146,7 @@ div.board {
 
 		&.ng-enter {
 			.opacity( 0 ) ;
-			.transition( opacity 2.0s ease ) ;
+			.transition( opacity 1.5s ease ) ;
 
 			&.ng-enter-active {
 				.opacity( 100 ) ;
@@ -162,7 +162,7 @@ div.board {
 			}
 		}
 	}
-}
+} // END: div.board.
 
 form.input {
 	margin: 20px 0px 0px 0px ;
@@ -192,7 +192,7 @@ form.input {
 		text-align: center ;
 		width: 100% ;
 	}
-}
+} // END: form.input.
 
 div.outro {
 	background-color: #EDF5FF ;
@@ -217,13 +217,14 @@ div.outro {
 			color: inherit ;
 		}
 	}
-}
+} // END: div.outro.
 
 div.used-words {
 	color: #CCCCCC ;
 	font-size: 32px ;
 	font-weight: 300 ;
 	line-height: 42px ;
+	min-height: 42px ;
 	padding-top: 30px ;
 
 	span {
@@ -242,4 +243,42 @@ div.used-words {
 			}
 		}
 	}
-}
+} // END: div.used-words.
+
+div.about {
+	margin: 50px 0px 0px 0px ;
+
+	a.avatar {
+		background-color: #FAFAFA ;
+		border: 1px solid #CCCCCC ;
+		border-radius: 65px 65px 65px 65px ;
+		display: block ;
+		height: 65px ;
+		margin: 0px auto 0px auto ;
+		padding: 5px 5px 5px 5px ;
+		width: 65px ;
+
+		img {
+			border-width: 0px 0px 0px 0px ;
+			border-radius: 65px 65px 65px 65px ;
+			display: block ;
+		}
+
+		// a.avatar -- variations.
+
+		&:hover {
+			background-color: #FFE8FB ;
+			border-color: #FF33CC ;
+		}
+	}
+
+	p {
+		color: #999999 ;
+		font-size: 16px ;
+		line-height: 25px ;
+
+		a {
+			color: inherit ;
+		}
+	}
+} // END: div.about.
