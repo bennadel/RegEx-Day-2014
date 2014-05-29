@@ -1,0 +1,113 @@
+<!doctype html>
+<html ng-app="RegExDay2014" ng-controller="AppController">
+<head>
+	<meta charset="utf-8" />
+
+	<title>
+		RegEx Day 2014
+	</title>
+
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,400italic,300italic"></link>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css"></link>
+</head>
+<body>
+
+	<!-- BEGIN: App. -->
+	<div class="app">
+
+		<!-- BEGIN: Header. -->
+		<div class="header">
+
+			<h1>
+				RegEx Day 2014
+			</h1>
+
+			<div class="score-board">
+				<span class="label">Score:</span>
+				<span class="score">{{ score | number : 0 }}</span>
+			</div>
+
+		</div>
+		<!-- END: Header. -->
+
+		<!-- BEGIN: Board. -->
+		<div class="board">
+			<ul class="parts">
+				
+				<li 
+					ng-repeat="part in board.asList()"
+					class="part round-{{ part.round }}"
+					ng-class="{ selected: part.isSelected }"
+					ng-style="{ left: ( 1 + ( part.x * 64 ) + 'px' ), top: ( ( part.y * 58 ) + 'px' ) }">
+					
+					{{ part.value }}
+
+				</li>
+
+			</ul>
+		</div>
+		<!-- END: Board. -->
+
+		<!-- BEGIN: Input. -->
+		<form ng-if="turnsRemaining" ng-submit="processInput()" class="input">
+
+			<label>
+				Enter Your Matching Word:
+			</label>
+
+			<span class="remaining">
+				{{ turnsRemaining }} Turns Left
+			</span>
+
+			<input type="text" ng-model="form.input" autofocus />
+
+		</form>
+		<!-- END: Input. -->
+
+		<!-- BEGIN: Outro. -->
+		<div ng-if="! turnsRemaining" class="outro">
+
+			<div class="headline">
+				Woot! You scored {{ score }} points! 
+			</div>
+
+			<div class="tweet">
+				<a ng-href="https://twitter.com/intent/tweet?text={{ tweetText }}" target="tweet">Tweet this</a> for a chance to win something groovy!
+			</div>
+
+		</div>
+		<!-- END: Outro. -->
+
+		<!-- BEGIN: Used Words. -->
+		<div ng-show="usedWords.length" class="used-words">
+
+			<span ng-repeat="word in usedWords">
+				<a ng-href="http://dictionary.reference.com/browse/{{ word }}?s=t" target="reference">{{ word }}</a><span ng-hide="$last">,</span>
+			</span>
+
+		</div>
+		<!-- END: Used Words. -->
+
+	</div>
+	<!-- END: App. -->
+
+
+	<!-- Load jQuery and AngularJS. -->
+	<script type="text/javascript" src="./vendor/jquery/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="./vendor/angular/angular-1.2.16.min.js"></script>
+	<script type="text/javascript" src="./vendor/angular/angular-animate-1.2.16.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+
+	<!-- Controllers. -->
+	<script type="text/javascript" src="./js/controllers/app-controller.js"></script>
+
+	<!-- Services. -->
+	<script type="text/javascript" src="./js/services/collections-service.js"></script>
+	<script type="text/javascript" src="./js/services/dictionary-service.js"></script>
+	<script type="text/javascript" src="./js/services/pattern-service.js"></script>
+
+	<!-- Models. -->
+	<script type="text/javascript" src="./js/models/board.js"></script>
+
+</body>
+</html>
