@@ -91,7 +91,8 @@ app.controller(
 		// I return the tweet text for the current game.
 		function getTweetText() {
 
-			var text = ( "Woot! I just scored " + $scope.score + " points on #RegExDay 2014! Play for a chance to win! http://bjam.in/2456" );
+			// TODO: Fix this link once blog post is written.
+			var text = ( "Woot! I just scored " + $scope.score + " points on #RegExDay 2014! Play for a chance to win! http://bjam.in/9999" );
 
 			return( encodeURIComponent( text ) );
 
