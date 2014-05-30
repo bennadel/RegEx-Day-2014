@@ -171,6 +171,16 @@ form.input input {
   text-align: center ;
   width: 100% ;
 }
+form.input span.hint {
+  bottom: 8px ;
+  color: #999999 ;
+  font-size: 16px ;
+  font-style: italic ;
+  font-weight: 300 ;
+  line-height: 32px ;
+  position: absolute ;
+  right: 10px ;
+}
 div.outro {
   background-color: #EDF5FF ;
   border-radius: 5px 5px 5px 5px ;
